@@ -3,6 +3,7 @@ package study;
 // 입력기능을 코드에 연결
 import java.util.Scanner;
 
+// Input
 public class Day01_2 {
 
     public static void main(String[] args) {

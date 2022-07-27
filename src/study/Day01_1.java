@@ -1,5 +1,6 @@
 package study;
 
+// Hello World!
 public class Day01_1 {
 
     public static void main(String[] args) {

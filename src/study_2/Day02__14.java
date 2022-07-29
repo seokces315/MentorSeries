@@ -3,7 +3,7 @@ package study_2;
 import java.util.Scanner;
 
 // Switch
-public class Day02_14 {
+public class Day02__14 {
 
     public static void main(String[] args) {
 

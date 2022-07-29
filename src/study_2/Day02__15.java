@@ -3,7 +3,7 @@ package study_2;
 import java.util.Random;
 
 // Pokemon
-public class Day02_15 {
+public class Day02__15 {
 
     public static void main(String[] args) {
 

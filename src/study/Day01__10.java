@@ -1,7 +1,7 @@
 package study;
 
 // Inequality_Sign_Operator
-public class Day01_10 {
+public class Day01__10 {
 
     public static void main(String[] args) {
 

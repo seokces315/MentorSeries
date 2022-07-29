@@ -3,7 +3,7 @@ package study_2;
 import java.util.Scanner;
 
 // If_Elseif
-public class Day02_11 {
+public class Day02__11 {
 
     public static void main(String[] args) {
 

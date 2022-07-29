@@ -1,7 +1,7 @@
 package study_2;
 
 // If_Else
-public class Day02_10 {
+public class Day02__10 {
 
     public static void main(String[] args) {
 

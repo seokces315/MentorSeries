@@ -3,7 +3,7 @@ package study_2;
 import java.util.Scanner;
 
 // If_If
-public class Day02_12 {
+public class Day02__12 {
 
     public static void main(String[] args) {
 

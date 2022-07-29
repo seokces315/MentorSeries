@@ -1,7 +1,7 @@
 package study;
 
 // Equality_Sign_Operator
-public class Day01_11 {
+public class Day01__11 {
 
     public static void main(String[] args) {
 

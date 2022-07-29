@@ -3,7 +3,7 @@ package study_2;
 import java.util.Scanner;
 
 // Traffic_Light_Switch
-public class Day02_13 {
+public class Day02__13 {
 
     public static void main(String[] args) {
 

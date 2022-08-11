@@ -2,7 +2,7 @@ package study_3;
 
 import java.util.Scanner;
 
-//
+// BankSystem
 public class Day03__11 {
 
     public static void main(String[] args) {

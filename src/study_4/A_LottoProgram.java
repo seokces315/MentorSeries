@@ -18,47 +18,62 @@ public class A_LottoProgram {
         StringTokenizer st;
 
         // 6개의 랜덤 숫자와 보너스 점수를 로또 배열에 저장
+        // Random 클래스 활용
         Random random = new Random();
-        int[] lottoArr = new int[6];
+        int[] lottoArr = new int[7];
         int lottoNum;
-        boolean flag = true;
+        
         // for-loop문 작성
+        lottoLoop :
         for(int i=0 ; i<lottoArr.length ; i++) {
             // 중복되는 숫자가 나오지 않게 알고리즘 설계
+            // 랜덤 숫자 선언
             lottoNum = random.nextInt(45) + 1;
-            for(int j=0 ; j<=i ; j++) {
+
+            // 현재 배열의 숫자와 중복검사
+            // 중복되는 순간 현재 반복 무효화하고 바깥 루프를 continue
+            for(int j=0 ; j<i ; j++) {
                 if(lottoArr[j]==lottoNum) {
                     i--;
-                    flag = false;
-                    break;
+                    continue lottoLoop;
                 }
             }
-            if(flag) {
-                lottoArr[i] = lottoNum;
-            }
+            
+            // 중복검사를 통과했으면
+            // 현재 랜덤숫자를 배열에 저장
+            lottoArr[i] = lottoNum;
         }
-        int lottoBonus = random.nextInt(45) + 1;
+        // 배열의 마지막 요소는 보너스 숫자로 지정
+        int lottoBonus = lottoArr[6];
 
         // 1~45까지의 6개의 숫자를 입력받아 배열에 저장
+        // 공백을 구분자로 입력받기
         int[] myArr = new int[6];
         bw.write("1 ~ 45까지의 숫자 6개 입력(중복 X) -> ");
         bw.flush();
         st = new StringTokenizer(br.readLine());
+        
         // for-loop문 작성
         for(int i=0 ; i<myArr.length ; i++) {
             myArr[i] = Integer.parseInt(st.nextToken());
         }
-        // 보너스 점수 입력받아서 배열에 저장
-        bw.write("보너스 점수 입력: ");
-        bw.flush();
-        int myBonus = Integer.parseInt(br.readLine());
 
-        // 두 배열을 비교해서 같은 번호의 개수 체크
+        // 두 배열을 비교해서 중복되는 번호의 개수 체크
+        // 이중 for문으로 모든 요소를 각각 비교
+        // 중복되는 event -> count++, i가 6일때는 논리값 변경
         int count = 0;
+        boolean bonus = false;
         for(int i=0 ; i<lottoArr.length ; i++) {
             for(int j=0 ; j<myArr.length ; j++) {
+                // 각 배열에는 중복되는 숫자가 없으므로
+                // Evnet와 동시에 break
                 if(lottoArr[i] == myArr[j]) {
-                    count++;
+                    if(i==6) {
+                        bonus = true;
+                    }
+                    else {
+                        count++;
+                    }
                     break;
                 }
             }
@@ -69,7 +84,7 @@ public class A_LottoProgram {
         if(count == 6) {
             rank = 1;
         }
-        else if((count==5) && (lottoBonus==myBonus)) {
+        else if((count==5) && (bonus)) {
             rank = 2;
         }
         else if(count == 5) {
@@ -91,7 +106,7 @@ public class A_LottoProgram {
         }
         else {
             bw.write(String.valueOf(rank));
-            bw.write("등!\n 축하드립니다~");
+            bw.write("등!\n축하드립니다~");
         }
         bw.newLine();
         bw.flush();

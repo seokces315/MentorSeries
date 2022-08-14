@@ -1,6 +1,6 @@
 package study_3;
 
-//
+// AverageScore
 public class Day03__15 {
 
     public static void main(String[] args) {

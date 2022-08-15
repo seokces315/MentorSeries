@@ -66,7 +66,7 @@ public class B_Cafe {
                     if (order == 0) {
                         break;
                     }
-                    else if((order!=1) && (order!=2) && (order!=3) && (order!=4) ) {
+                    else if((order<1) && (order>4)) {
                         bw.write("주문 번호에 맞게 입력해주세요!\n");
                         bw.flush();
                         continue;
